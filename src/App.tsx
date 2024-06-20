@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect, useRef, useCallback } from "react";
+import Cards from "./componant/Cards";
 import './App.css'
+import Navbar2 from "./componant/Navbar2";
+import Bgeffect from "./componant/Bgeffect";
+import { motion } from "framer-motion"
+import PageOne from "./Pages/PageOne";
+import LocomotiveScroll from 'locomotive-scroll';
+import PageTwo from "./Pages/PageTwo";
+import PageThree from "./Pages/PageThree";
+import PageFour from "./Pages/PageFour";
+import PageFive from "./Pages/PageFive";
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const locomotiveScroll = new LocomotiveScroll();
+
+
+
+  
   return (
+    
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      {/* <Navbar /> */}
+      <div className="min-h-screen w-screen relative">
+
+      <Navbar2/>
+      <PageOne/>
+      <PageTwo/>
+      <PageThree/>
+      <PageFour/>
+      { <PageFive/>}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
     </>
-  )
+
+  );
 }
 
-export default App
+export default App;
